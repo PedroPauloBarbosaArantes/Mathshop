@@ -1,240 +1,464 @@
-.container {
-  background-color: #f5f5dc;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  width: 100%;
-  margin-top: 10px;
-  margin-left: 10px;
-  border: 2px solid #c91e1e;
-}
-
-h1,
-h2 {
-  text-align: center;
-  color: #333;
-}
-
-.status p {
-  font-size: 18px;
-  text-align: center;
-  color: #333;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-button {
-  background-color: #c91e1e;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.4s ease;
-}
-
-.finalizarcompra {
-  background-color: #f9f9f9;
-}
-
-button:hover {
-  background-color: #5391c7;
-}
-
-.checkout {
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: -10px;
-}
-
-.checkout button {
-  background-color: #c91e1e;
-}
-
-.checkout button:hover {
-  background-color: #5391c7;
-}
-
-.footer.listagem {
-  overflow-x: auto;
-  padding: 20px 0;
-  background-color: #f9f9f9;
-  border: 1px solid #c91e1e;
-  margin-top: 610px;
-}
-
-.footer.listagem ul {
-  list-style: none;
-  padding: 0;
+/* Reset básico */
+* {
   margin: 0;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  width: fit-content;
-}
-
-.footer.listagem li {
-  margin-right: 10px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background-color: #f4f4f4;
-  background-image: url(mercado.png);
-  background-position: 0px -455px;
+  background-image: url(/imgs/mercado.png);
+  background-position: center bottom; 
   background-repeat: no-repeat;
-}
-
-.fala {
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  padding: 10px;
-  background-color: #fff;
-  border: 2px solid #333;
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 290px;
-  margin-left: 50px;
-}
-
-.fala:after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-top-color: #fff;
-  border-bottom: 0;
-  margin-left: -10px;
-  border-right-color: #333;
-  border-left-color: #333;
-}
-
-.posicao {
-  position: absolute;
-  top: 300px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.produto {
-  width: 150px;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 310px;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.produto img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-}
-
-.produto h3 {
-  margin-top: 10px;
-  text-align: center;
-  color: #333;
-}
-
-.produto button {
-  margin-top: 10px;
-  display: block;
-  width: 100%;
-}
-
-.luckiest-guy-regular {
-  font-family: "Luckiest Guy", cursive;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.produto {
-  border: 2px solid #c91e1e;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(209, 21, 8, 0.5);
+/* Container principal */
+.container {
   background-color: #f5f5dc;
-}
-.footer.listagem {
-  background: green;
+  border: 2px solid #c91e1e;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  max-width: 600px;
+  width: 90%; 
 }
 
-#calculadora {
-  position: absolute;
-  bottom: 130px;
+.main-content {
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 668px;
+  flex-direction: row-reverse; /* Inverte a ordem dos elementos */
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+/* Título */
+.title {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Status da compra */
+.status {
+  margin-bottom: 20px;
+}
+
+.status p {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Input do troco */
+.player-input {
+  width: 52%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Botão de finalizar compra */
+.checkout-button {
+  background-color: #c91e1e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: background-color 0.4s ease;
+}
+
+.checkout-button:hover {
+  background-color: #5391c7;
+}
+
+/* Botão mostrar/esconder calculadora */
+#toggleCalculator {
+  background-color: #c91e1e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  transition: background-color 0.4s ease;
+  top: 20px;
   left: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  position:absolute;
+}
+
+#toggleCalculator:hover {
+  background-color: #5391c7;
+}
+
+/* Calculadora */
+.calculator {
   background-color: hsl(0, 0%, 10%);
   border-radius: 15px;
-  max-width: 275px;
   overflow: hidden;
+  position: absolute; /* Define a calculadora como fixa na tela */
+  top: 75px; /* Posiciona a calculadora a 20px da parte inferior da viewport */
+  left: 12%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  display: none; /* Esconde a calculadora por padrão */
+  z-index: 10; /* Define um z-index alto para a calculadora ficar acima de outros elementos */
 }
 
-#display {
-  width: 100%;
-  padding: 20px;
-  font-size: 2rem;
-  text-align: left;
-  border: none;
+.calculator-display {
   background-color: hsl(0, 0%, 20%);
+  border: none;
   color: white;
+  font-size: 2rem;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
 }
 
-#keys {
+.calculator-keys {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
   padding: 25px;
 }
 
-#keys button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  border: none;
+.calculator-keys button {
   background-color: hsl(0, 0%, 30%);
+  border: none;
+  border-radius: 50px;
   color: white;
+  cursor: pointer;
   font-size: 2rem;
   font-weight: bold;
-  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  transition: background-color 0.4s ease;
 }
 
-#keys button:hover {
+.calculator-keys button:hover {
   background-color: hsl(0, 0%, 40%);
 }
-#keys button:active {
-  background-color: hsl(0, 0%, 50%);
-}
 
-#keys .operador-btn {
+.operador-btn {
   background-color: hsl(39, 100%, 55%);
 }
 
-#keys .operador-btn:hover {
+.operador-btn:hover {
   background-color: hsl(39, 100%, 65%);
 }
-#keys .operador-btn:active {
-  background-color: hsl(39, 100%, 75%);
+
+.equal-btn {
+  background-color: hsl(120, 100%, 50%);
+}
+
+.equal-btn:hover {
+  background-color: hsl(120, 100%, 60%);
+}
+
+/* Lista de produtos */
+.products-container {
+  width: 190px; /* Largura inicial da barra lateral */
+  height: calc(100vh - 35px);
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f5f5dc;
+  border: 2px solid #c91e1e;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(209, 21, 8, 0.5);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.product-item {
+  margin-bottom: 20px;
+  width: 150px; /* Define a largura fixa para os itens de produtos */
+  flex: 0 0 calc(33.333% - 20px); /* Define a largura dos itens de produtos como 33.333% - 20px */
+}
+
+/* Produto */
+.produto {
+  background-color: #f5f5dc;
+  border: 2px solid #c91e1e;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(209, 21, 8, 0.5);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.produto:hover {
+  transform: scale(1.05); /* Aumenta o tamanho do produto em 5% ao passar o mouse */
+}
+
+.product-image {
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  margin: 0 auto 10px;
+  max-width: 100%;
+}
+
+.product-name {
+  color: #333;
+  font-size: 1.2rem; /* Define o tamanho da fonte do nome do produto */
+  margin-bottom: 10px;
+}
+
+/* Botão de escanear */
+.scan-button {
+  background-color: #c91e1e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: background-color 0.4s ease;
+  width: 100%;
+}
+
+.scan-button:hover {
+  background-color: #5391c7;
+}
+
+/* Fala do monstro */
+.monster-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.fala {
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px; /* Define a largura da fala do monstro */
+  text-align: center;
+}
+
+.fala::after {
+  border: 10px solid transparent;
+  border-bottom: 0;
+  border-left-color: #333;
+  border-right-color: #333;
+  border-top-color: #fff;
+  bottom: -10px;
+  content: "";
+  height: 0;
+  left: 50%;
+  margin-left: -10px;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 0;
+}
+
+/* Imagem do monstro */
+.monster-image-container {
+  text-align: center;
+}
+
+.monster-image-container img {
+  width: 663px; /* Define a largura máxima da imagem do monstro */
+  height: auto;
+}
+
+/* Media Queries */
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%; /* Define a largura máxima do container como 90% da largura da viewport */
+    padding: 15px;
+  }
+
+  .main-content {
+    flex-direction: column; /* Empilha a barra lateral sobre o jogo em telas menores */
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .status p {
+    font-size: 16px;
+  }
+
+  .player-input {
+    padding: 8px;
+  }
+
+  .checkout-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #toggleCalculator {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .calculator {
+    bottom: 10px;
+  }
+
+  .calculator-display {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .calculator-keys {
+    padding: 20px;
+  }
+
+  .calculator-keys button {
+    font-size: 1.5rem;
+    height: 40px;
+    width: 40px;
+  }
+
+  .products-container {
+    width: 100%; /* Barra lateral ocupa a largura total em telas menores */
+    height: auto; /* Altura ajustada automaticamente */
+    margin-bottom: 20px;
+  }
+
+  .product-item {
+    width: 48%; /* Define a largura dos itens de produtos como 48% */
+    margin-bottom: 10px;
+  }
+
+  .produto {
+    padding: 10px;
+  }
+
+  .product-name {
+    font-size: 1rem;
+  }
+
+  .scan-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .monster-container {
+    margin-bottom: 10px;
+  }
+
+  .fala {
+    top: -30px;
+    width: 150px;
+  }
+
+  .monster-image-container img {
+    max-width: 150px;
+  }
+}
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .status p {
+    font-size: 14px;
+  }
+
+  .player-input {
+    padding: 6px;
+  }
+
+  .checkout-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  #toggleCalculator {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .calculator {
+    bottom: 5px;
+  }
+
+  .calculator-display {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .calculator-keys {
+    padding: 15px;
+  }
+
+  .calculator-keys button {
+    font-size: 1.2rem;
+    height: 30px;
+    width: 30px;
+  }
+
+  .products-container {
+    margin: 5px 0;
+  }
+
+  .product-item {
+    width: 100%; /* Define a largura dos itens de produtos como 100% */
+    margin-bottom: 5px;
+  }
+
+  .produto {
+    padding: 8px;
+  }
+
+  .product-name {
+    font-size: 0.9rem;
+  }
+
+  .scan-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .monster-container {
+    margin-bottom: 5px;
+  }
+
+  .fala {
+    top: -25px;
+    width: 120px;
+    font-size: 0.8rem; /* Define o tamanho da fonte da fala do monstro */
+  }
+
+  .monster-image-container img {
+    max-width: 120px;
+  }
 }
