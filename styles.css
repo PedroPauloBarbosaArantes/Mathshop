@@ -124,12 +124,10 @@ button:hover {
   border: 2px solid #333;
   border-radius: 10px;
   left: 50%;
-  margin-left: 50px;
-  margin-top: 290px;
+  top: -120px;
   padding: 10px;
   position: absolute;
   text-align: center;
-  top: -40px;
   transform: translateX(-50%);
   width: 150px;
 }
@@ -157,7 +155,7 @@ h2 {
 }
 
 .luckiest-guy-regular {
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Luckiest Guy";
   font-style: normal;
   font-weight: 200;
 }
@@ -254,7 +252,6 @@ ul {
   background-color: hsl(0, 0%, 10%);
   border-radius: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  max-width: 275px;
   overflow: hidden;
   position: absolute;
   left: 200px;
