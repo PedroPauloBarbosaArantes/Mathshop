@@ -1,2 +1,1 @@
-# Mathshop
-Trabalho da faculdade
+# Jogo-MathShop
